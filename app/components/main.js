@@ -1,5 +1,8 @@
 import React from 'react';
 
+// one time requirement at top level component
+require("../style.scss");
+
 export default class Main extends React.Component {
     render() {
         return (

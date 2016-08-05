@@ -5,6 +5,9 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: 'body'
 });
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
+
 module.exports = {
     entry: [
         './app/index.js'
@@ -17,11 +20,21 @@ module.exports = {
             query: {
                 presets: ['es2015', 'react']
             }
+        },
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
         }]
     },
     output: {
         filename: "index_bundle.js",
         path: __dirname + '/dist'
     },
-    plugins: [HTMLWebpackPluginConfig]
+    sassLoader: {
+        includePaths: [ 'app/style' ]
+    },
+    plugins: [ 
+        HTMLWebpackPluginConfig, 
+        ExtractTextPluginConfig
+    ]
 }
