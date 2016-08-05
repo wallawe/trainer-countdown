@@ -1,12 +1,15 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin       = require('html-webpack-plugin');
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/app/index.html',
     filename: 'index.html',
     inject: 'body'
 });
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin       = require('extract-text-webpack-plugin');
 var ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
+
+var precss       = require('precss');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: [
@@ -32,6 +35,10 @@ module.exports = {
         {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
+        },
+        {
+            test: /\.css$/,
+            loader: "style-loader!css-loader!postcss-loader"
         }]
     },
     output: {
@@ -40,6 +47,9 @@ module.exports = {
     },
     sassLoader: {
         includePaths: [ 'app/style' ]
+    },
+    postcss: function() {
+        return [precss, autoprefixer]
     },
     plugins: [ 
         HTMLWebpackPluginConfig, 

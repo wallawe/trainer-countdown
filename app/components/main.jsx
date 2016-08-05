@@ -7,8 +7,7 @@ require("../style.scss");
 export default class Main extends React.Component {
     render() {
         return (
-            <div>
-                <Navigation />
+            <div className="container">
                 {this.props.children}
             </div>
         )

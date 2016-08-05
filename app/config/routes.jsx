@@ -6,6 +6,7 @@ import Main from '../components/main';
 import LogIn from '../components/log-in';
 import SignUp from '../components/sign-up';
 import Splash from '../components/splash';
+import AddClient from '../components/add-client';
 
 
 let routes = (
@@ -15,6 +16,7 @@ let routes = (
             <Route path="log-in" component={LogIn} />
             <Route path="sign-up" component={SignUp} />
             <Route path="home" component={Home} />
+            <Route path="add-client" component={AddClient} />
 		</Route>
 	</Router>
 )
