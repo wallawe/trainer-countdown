@@ -15,11 +15,19 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /(node_modules)/,
             loader: 'babel-loader',
             query: {
                 presets: ['es2015', 'react']
             }
+        },
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015', 'react']
+          }
         },
         {
             test: /\.scss$/,
@@ -36,5 +44,8 @@ module.exports = {
     plugins: [ 
         HTMLWebpackPluginConfig, 
         ExtractTextPluginConfig
-    ]
+    ],
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    }
 }
