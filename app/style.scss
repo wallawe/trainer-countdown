@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -20,8 +20,8 @@ time, mark, audio, video {
   vertical-align: top;
   line-height: 1;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -29,14 +29,21 @@ footer, header, hgroup, menu, nav, section {
 ol, ul {
   list-style: none;
 }
+
 blockquote, q {
   quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
+
+input {
+  outline: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -59,19 +66,45 @@ $red: #F87060;
 $white: #ffffff;
 $neon: #0FF4C6;
 
+$font-base: 'Fjalla One', sans-serif;
+
 body {
-  font-family: 'Fjalla One', sans-serif;
-  background: $dark-gray;
+  font-family: $font-base;
 }
 
 a {
   color: #08c;
 }
 
+.purple-btn {
+  background: $purple;
+  font-family: $font-base;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 15px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: $white;
+  display: block;
+  border: 0;
+  width: 100%;
+}
+
+.bottom-btn {
+  margin-top: auto;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   height: 100vh;
+  border-top: 5px solid $purple;
 
   display: flex;
   flex-direction: column;
@@ -110,6 +143,13 @@ a {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    header {
+      font-size: 32px;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -120,13 +160,12 @@ a {
   display: flex;
   flex-wrap: nowrap;
   flex-grow: 0 !important;
+  background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/weights.jpeg');
+  background-repeat: none;
+  background-position: center;
 
   header {
     color: $white;
-    font-size: 32px;
-    text-align: center;
-    line-height: 1.3;
-    margin-bottom: 20px;
   }
 
   h2 {
@@ -142,9 +181,10 @@ a {
     margin-bottom: 10px;
 
     li {
-      background: rgba($white, 0.85);
+      background: rgba($white, 0.8);
       box-shadow: 0 0 2px rgba(0,0,0,0.5);
       margin-bottom: 10px;
+      border-radius: 3px;
       display: flex;
 
       .client-info {
@@ -162,7 +202,7 @@ a {
           display: block;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: #777;
+          color: #999;
         }
       }
 
@@ -182,16 +222,121 @@ a {
       }
     }
   }
+}
 
-  .bottom-btn {
-    background: $purple;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 300;
-    padding: 15px;
-    letter-spacing: 1px;
-    font-size: 12px;
-    color: $white;
+
+// New Client Page
+.add-client {
+  form {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
   }
+}
+
+
+
+// Forms
+label.label-text {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input.input-text {
+  display: block;
+  border-bottom: 2px solid #e6e6e6;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.pin-holder {
+  text-align: center;
+
+  .pin-input {
+    border: 1px solid #ddd;
+    font-size: 28px;
+    letter-spacing: 40px;
+    width: 100%;
+    padding-left: 40px;
+    margin-top: 5px;
+  }
+}
+
+
+ // Rangeslider
+.rangeslider {
+  margin: 20px 0 40px 0;
+  position: relative;
+  background: #e6e6e6;
+}
+.rangeslider .rangeslider__fill,
+.rangeslider .rangeslider__handle {
+  position: absolute;
+}
+.rangeslider,
+.rangeslider .rangeslider__fill {
+  display: block;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.rangeslider .rangeslider__handle {
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+}
+.rangeslider .rangeslider__handle:active {
+  background: #999;
+}
+/**
+ * Rangeslider - Horizontal slider
+ */
+.rangeslider-horizontal {
+  height: 20px;
+  border-radius: 10px;
+}
+.rangeslider-horizontal .rangeslider__fill {
+  height: 100%;
+  background: #27ae60;
+  border-radius: 10px;
+  top: 0;
+}
+.rangeslider-horizontal .rangeslider__handle {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  top: -10px;
+}
+/**
+ * Rangeslider - Vertical slider
+ */
+.rangeslider-vertical {
+  margin: 20px auto;
+  height: 150px;
+  max-width: 10px;
+  background: none;
+}
+.rangeslider-vertical .rangeslider__fill {
+  width: 100%;
+  background: #27ae60;
+  box-shadow: none;
+  bottom: 0;
+}
+.rangeslider-vertical .rangeslider__handle {
+  width: 30px;
+  height: 10px;
+  left: -10px;
+}
+.rangeslider-vertical .rangeslider__handle:active {
+  box-shadow: none;
 }

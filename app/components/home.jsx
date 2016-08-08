@@ -6,7 +6,7 @@ export default class Home extends React.Component {
         return (
             <section className="home">
                 <header>Welcome, Kareem</header>    
-                <h2>5 Clients</h2>
+                <h2>8 Clients</h2>
                 <ul className="client-list">
                     <Client />
                     <Client />
@@ -14,8 +14,9 @@ export default class Home extends React.Component {
                     <Client />
                     <Client />
                     <Client />
+                    <Client />
                 </ul>
-                <Link to="/add-client" className="bottom-btn">+ add a client</Link>
+                <Link to="/add-client" className="purple-btn">+ add a client</Link>
             </section>
         )
     }
@@ -26,7 +27,7 @@ class Client extends React.Component {
         return (
             <li>
                 <div className="client-info">
-                    <span className="person">Allison Klibanoff</span>
+                    <span className="person">Trey Anastasio</span>
                     <span className="sessions">22 sessions remaining</span>
                 </div>
                 <div className="actions">
