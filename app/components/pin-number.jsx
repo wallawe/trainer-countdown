@@ -12,7 +12,7 @@ export default class PinNumber extends Component {
         let pinLength = e.target.value.length;
 
         if (pinLength < 5) {
-            this.setState({ 
+            this.setState({
                 pin: e.target.value
             })
         }
@@ -21,11 +21,11 @@ export default class PinNumber extends Component {
     render() {
         return (
             <div className="pin-holder">
-                <input 
-                    type="password" 
-                    max="4" 
-                    min="4" 
-                    onChange={this.handleChange} 
+                <input
+                    type="number"
+                    max="4"
+                    min="4"
+                    onChange={this.handleChange}
                     value={this.state.pin}
                     className="pin-input" />
             </div>

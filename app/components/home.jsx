@@ -5,7 +5,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <section className="home">
-                <header>Welcome, Kareem</header>    
+                <header>Welcome, Kareem</header>
                 <h2>8 Clients</h2>
                 <ul className="client-list">
                     <Client />
@@ -16,7 +16,7 @@ export default class Home extends React.Component {
                     <Client />
                     <Client />
                 </ul>
-                <Link to="/add-client" className="purple-btn">+ add a client</Link>
+                <Link to="/add-client" className="purple btn">+ add a client</Link>
             </section>
         )
     }

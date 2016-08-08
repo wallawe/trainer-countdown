@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-rangeslider';
 import PinNumber from './pin-number';
+import { Link } from 'react-router';
 
 export default class AddClient extends React.Component {
 
@@ -23,7 +24,10 @@ export default class AddClient extends React.Component {
                         <PinNumber />
                     </label>
 
-                    <input type="submit" className="purple-btn bottom-btn" value="Save" />
+                    <div className="align-bottom">
+                        <input type="submit" className="btn purple bottom-btn" value="Save" />
+                        <Link to="/home" className="btn gray bottom-btn">Cancel</Link>
+                    </div>
                 </form>
 
             </section>

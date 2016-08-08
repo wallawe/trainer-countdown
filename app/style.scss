@@ -76,8 +76,7 @@ a {
   color: #08c;
 }
 
-.purple-btn {
-  background: $purple;
+.btn {
   font-family: $font-base;
   text-align: center;
   text-decoration: none;
@@ -92,7 +91,18 @@ a {
   width: 100%;
 }
 
-.bottom-btn {
+.btn {
+
+  &.purple {
+    background: $purple;
+  }
+
+  &.gray {
+    background: #bbb;
+  }
+}
+
+.align-bottom {
   margin-top: auto;
 }
 
