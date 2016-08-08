@@ -6,7 +6,9 @@ import Main from '../components/main';
 import LogIn from '../components/log-in';
 import SignUp from '../components/sign-up';
 import Splash from '../components/splash';
-import AddClient from '../components/add-client';
+import AlterClient from '../components/alter-client';
+import Client from '../containers/client';
+import NewSession from '../containers/new-session';
 
 
 let routes = (
@@ -16,7 +18,10 @@ let routes = (
             <Route path="log-in" component={LogIn} />
             <Route path="sign-up" component={SignUp} />
             <Route path="home" component={Home} />
-            <Route path="add-client" component={AddClient} />
+            <Route path="clients/:id" component={Client} />
+            <Route path="clients/:id/edit" component={AlterClient} />
+            <Route path="clients/:id/new-session" component={NewSession} />
+            <Route path="add-client" component={AlterClient} />
 		</Route>
 	</Router>
 )

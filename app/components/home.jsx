@@ -12,9 +12,6 @@ export default class Home extends React.Component {
                     <Client />
                     <Client />
                     <Client />
-                    <Client />
-                    <Client />
-                    <Client />
                 </ul>
                 <Link to="/add-client" className="purple btn">+ add a client</Link>
             </section>
@@ -26,13 +23,13 @@ class Client extends React.Component {
     render() {
         return (
             <li>
-                <div className="client-info">
+                <Link to="/clients/Will" className="client-info">
                     <span className="person">Trey Anastasio</span>
                     <span className="sessions">22 sessions remaining</span>
-                </div>
-                <div className="actions">
-                    <i className="fa fa-pencil"></i>
-                </div>
+                </Link>
+                <Link to="/clients/Will/new-session" className="actions">
+                    <i className="fa fa-play"></i>
+                </Link>
             </li>
         )
     }

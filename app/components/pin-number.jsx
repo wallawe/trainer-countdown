@@ -4,7 +4,7 @@ export default class PinNumber extends Component {
     constructor() {
         super();
 
-        this.state = { pin: '' }
+        this.state = { pin: '' };
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -14,7 +14,7 @@ export default class PinNumber extends Component {
         if (pinLength < 5) {
             this.setState({
                 pin: e.target.value
-            })
+            });
         }
     }
 
@@ -22,7 +22,8 @@ export default class PinNumber extends Component {
         return (
             <div className="pin-holder">
                 <input
-                    type="number"
+                    type="password"
+                    pattern="[0-9]*"
                     max="4"
                     min="4"
                     onChange={this.handleChange}

@@ -62,6 +62,7 @@ $blue: #246EB9;
 $purple: #8353F2;
 $black: #2A2D34;
 $dark-gray: #3E4455;
+$light-gray: #f2f2f2;
 $red: #F87060;
 $white: #ffffff;
 $neon: #0FF4C6;
@@ -89,9 +90,6 @@ a {
   display: block;
   border: 0;
   width: 100%;
-}
-
-.btn {
 
   &.purple {
     background: $purple;
@@ -100,10 +98,26 @@ a {
   &.gray {
     background: #bbb;
   }
+
+  &.red {
+    background: $red;
+  }
+
+  &.neon {
+    background: darken($neon, 5%);
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
 }
 
 .align-bottom {
   margin-top: auto;
+}
+
+.top-20 {
+  margin-top: 20px;
 }
 
 .lowercase {
@@ -169,7 +183,6 @@ a {
 .home {
   display: flex;
   flex-wrap: nowrap;
-  flex-grow: 0 !important;
   background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/weights.jpeg');
   background-repeat: none;
   background-position: center;
@@ -189,6 +202,7 @@ a {
   .client-list {
     overflow: scroll;
     margin-bottom: 10px;
+    flex-grow: 1;
 
     li {
       background: rgba($white, 0.8);
@@ -198,6 +212,7 @@ a {
       display: flex;
 
       .client-info {
+        text-decoration: none;
         flex-grow: 1;
         padding: 10px;
 
@@ -224,6 +239,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-decoration: none;
 
         .fa {
           font-size: 18px;
@@ -236,7 +252,7 @@ a {
 
 
 // New Client Page
-.add-client {
+.alter-client {
   form {
     display: flex;
     flex-grow: 1;
@@ -244,7 +260,45 @@ a {
   }
 }
 
+// New Session Page
+.new-session {
+  background: $light-gray;
+}
 
+// Client Details Page
+.client-details {
+  background: linear-gradient($black, $dark-gray);
+
+  header {
+    color: $white;
+    letter-spacing: 2px;
+  }
+
+  main {
+    .remaining {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: lighten($dark-gray, 12%);
+      border: 2px solid #ddd;
+      margin: 40px auto 20px auto;
+      color: $white;
+      font-weight: 700;
+      font-size: 34px;
+      text-align: center;
+      padding-top: 64px;
+
+      h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #eee;
+        font-weight: 300;
+        margin-top: 10px;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+}
 
 // Forms
 label.label-text {
@@ -277,7 +331,7 @@ input.input-text {
     font-size: 28px;
     letter-spacing: 40px;
     width: 100%;
-    padding-left: 40px;
+    padding: 10px 0 10px 40px;
     margin-top: 5px;
   }
 }
