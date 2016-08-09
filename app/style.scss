@@ -253,6 +253,8 @@ a {
 
 // New Client Page
 .alter-client {
+  background: $light-gray;
+
   form {
     display: flex;
     flex-grow: 1;
@@ -319,6 +321,7 @@ input.input-text {
   outline: none;
   padding: 10px;
   font-size: 18px;
+  margin-top: 5px;
   margin-bottom: 20px;
   width: 100%;
 }
