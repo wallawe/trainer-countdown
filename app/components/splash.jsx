@@ -5,9 +5,9 @@ export default class Splash extends React.Component {
     render() {
         return (
             <section>
-                <Link to="/sign-up">Sign Up with Facebook</Link><br/><br/>
+                <a href="/auth/v1/facebook/connect">Sign Up with Facebook</a><br/><br/>
                 <Link to="/log-in">Log In</Link><br/><br/>
-                <Link to="/home">Home</Link><br/><br/>
+                <Link to="/clients">Clients</Link><br/><br/>
             </section>
         )
     }

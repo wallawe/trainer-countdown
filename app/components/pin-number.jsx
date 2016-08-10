@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 
 export default class PinNumber extends Component {
-    constructor() {
-        super();
-
-        this.state = { pin: '' };
-        this.handleChange = this.handleChange.bind(this);
-    }
 
     handleChange(e) {
-        let pinLength = e.target.value.length;
+        let pin = e.target.value;
 
-        if (pinLength < 5) {
-            this.setState({
-                pin: e.target.value
-            });
+        if (pin.length < 5) {
+            this.props.changePin(pin);
         }
     }
 
@@ -26,8 +18,8 @@ export default class PinNumber extends Component {
                     pattern="[0-9]*"
                     max="4"
                     min="4"
-                    onChange={this.handleChange}
-                    value={this.state.pin}
+                    onChange={this.handleChange.bind(this)}
+                    value={this.props.pin}
                     className="pin-input" />
             </div>
         )

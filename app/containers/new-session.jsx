@@ -7,11 +7,17 @@ export default class NewSession extends React.Component {
     render() {
         return (
             <section className="new-session">
-                <header>New Session</header>
+                <header>
+                    <h1>Let's get it!</h1>
+                    <h2>Start a new session for {this.props.client}</h2>
+                </header>
+
                 <label className="label-text">
                     Trainer PIN
                     <PinNumber />
                 </label>
+
+                <i className="fa fa-bolt fa-5x"></i>
 
                 <label className="label-text">
                     Client PIN
@@ -19,8 +25,8 @@ export default class NewSession extends React.Component {
                 </label>
 
                 <div className="align-bottom">
-                    <button className="btn purple">Start!</button>
-                    <Link to="/home" className="btn gray">Cancel</Link>
+                    <button className="btn purple b-5">Begin</button>
+                    <Link to="/clients" className="btn gray">Cancel</Link>
                 </div>
             </section>
         )

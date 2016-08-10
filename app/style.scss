@@ -82,13 +82,15 @@ a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   padding: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   font-size: 12px;
   color: $white;
   display: block;
+  outline: none;
   border: 0;
+  border-radius: 3px;
   width: 100%;
 
   &.purple {
@@ -116,9 +118,10 @@ a {
   margin-top: auto;
 }
 
-.top-20 {
-  margin-top: 20px;
-}
+.t-20 { margin-top: 20px; }
+.b-20 { margin-bottom: 20px; }
+.t-5  { margin-top: 5px; }
+.b-5  { margin-bottom: 5px; }
 
 .lowercase {
   text-transform: lowercase !important;
@@ -173,18 +176,20 @@ a {
       text-align: center;
       line-height: 1.3;
       margin-bottom: 20px;
+      font-weight: bold;
     }
   }
 }
 
 
 
-// Home
-.home {
+// Clients index
+.clients {
   display: flex;
   flex-wrap: nowrap;
   background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/weights.jpeg');
   background-repeat: none;
+  background-size: cover;
   background-position: center;
 
   header {
@@ -220,6 +225,7 @@ a {
           color: $dark-gray;
           display: block;
           margin-bottom: 8px;
+          text-transform: capitalize;
         }
 
         .sessions {
@@ -252,7 +258,7 @@ a {
 
 
 // New Client Page
-.alter-client {
+.new-client, .edit-client {
   background: $light-gray;
 
   form {
@@ -265,6 +271,18 @@ a {
 // New Session Page
 .new-session {
   background: $light-gray;
+
+  header h2 {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #666;
+    font-weight: 300;
+  }
+
+  .fa-bolt {
+    color: darken($light-gray, 10%);
+    margin: 20px auto;
+  }
 }
 
 // Client Details Page
@@ -274,6 +292,7 @@ a {
   header {
     color: $white;
     letter-spacing: 2px;
+    text-transform: capitalize;
   }
 
   main {
@@ -314,13 +333,10 @@ label.label-text {
 
 input.input-text {
   display: block;
-  border-bottom: 2px solid #e6e6e6;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
+  border: 1px solid #ddd;
   outline: none;
-  padding: 10px;
-  font-size: 18px;
+  padding: 15px 10px;
+  font-size: 20px;
   margin-top: 5px;
   margin-bottom: 20px;
   width: 100%;
