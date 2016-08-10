@@ -15,8 +15,11 @@ export default class ClientForm extends Component {
         }
     }
 
-    _changePin(val) {
-        this.setState({ clientPin: val });
+    _changePin(e) {
+        let pin = e.target.value
+        if (pin.length < 5) {
+            this.setState({ clientPin: pin });
+        }
     }
 
     _changeSessions(val) {
@@ -32,7 +35,10 @@ export default class ClientForm extends Component {
 
         let { clientName, clientPin, sessionCount } = this.state;
 
-        if (!clientName || !clientPin) return;
+        if (!clientName || !clientPin) {
+            alert('Please enter all info');
+            return;
+        }
 
         addClient({
             name: clientName,

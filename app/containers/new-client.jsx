@@ -11,7 +11,7 @@ export default class NewClient extends Component {
             <section className="new-client">
                 <header>New Client</header>
 
-                <ClientForm client="Will" />
+                <ClientForm />
             </section>
         )
     }

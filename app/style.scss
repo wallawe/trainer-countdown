@@ -86,6 +86,7 @@ a {
   padding: 15px;
   letter-spacing: 1.5px;
   font-size: 12px;
+  cursor: pointer;
   color: $white;
   display: block;
   outline: none;
@@ -122,6 +123,7 @@ a {
 .b-20 { margin-bottom: 20px; }
 .t-5  { margin-top: 5px; }
 .b-5  { margin-bottom: 5px; }
+.b-10  { margin-bottom: 10px; }
 
 .lowercase {
   text-transform: lowercase !important;
