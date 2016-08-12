@@ -45,11 +45,26 @@ export default class Main extends Component {
 }
 
 class Navigation extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            showMenu: false
+        }
+
+        this._toggleMenu = this._toggleMenu.bind(this);
+    }
+
+    _toggleMenu() {
+        this.setState({ showMenu: !this.state.showMenu });
+    }
+
     _logOut(e) {
         e.preventDefault();
 
         auth.logOut().then(res => {
             auth.changeSessionStatus(false);
+            this.setState({ showMenu: false });
             hashHistory.push('/')
         });
     }
@@ -57,12 +72,13 @@ class Navigation extends Component {
     render() {
         return (
             <nav className="navigation">
-                <i className="fa fa-bars"></i>
-                { this.props.loggedIn
+                <i className="fa fa-bars" onClick={this._toggleMenu}></i>
+                { (this.props.loggedIn && this.state.showMenu)
                     ?
-                    <div>
+                    <div className="nav-menu">
+                        <i className="fa fa-times" onClick={this._toggleMenu}></i>
+                        <Link to="/clients" onClick={this._toggleMenu}>Home</Link>
                         <a href="" onClick={this._logOut.bind(this)}>Log Out</a><br/>
-                        <Link to="/clients">Clients</Link>
                     </div>
                     :
                     ''

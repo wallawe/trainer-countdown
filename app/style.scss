@@ -141,28 +141,45 @@ a {
 
   > .navigation {
     position: relative;
-    background: $white;
-    min-height: 40px;
-    padding: 8px;
 
-    .logo {
-      color: $red;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 5px;
-      text-align: center;
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba($red, 0.95);
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
 
       a {
+        padding: 20px;
+        color: $white;
         text-decoration: none;
-        color: inherit;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
+
+      .fa-times {
+        position: fixed;
+        top: 12px;
+        right: 10px;
+        color: $white;
+        cursor: pointer;
+        font-size: 22px;
+      }
+
     }
 
     .fa-bars {
       position: absolute;
       top: 10px;
       font-size: 20px;
+      cursor: pointer;
       right: 10px;
+      color: #bbb;
     }
   }
 

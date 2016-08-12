@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import auth from '../api/auth';
 import UserForm from '../components/user-form';
 
@@ -36,7 +36,8 @@ export default class Splash extends Component {
 
         auth.logIn(this.state).then(res => {
             auth.setLsUser(res);
-            this.changeSessionStatus(true);
+            hashHistory.push('clients');
+            auth.changeSessionStatus(true);
         });
     }
 
