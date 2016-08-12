@@ -20,7 +20,7 @@ export default class Clients extends Component {
 
         return (
             <section className="clients">
-                <header>Welcome, Kareem</header>
+                <header>Welcome, </header>
                 <h2>
                     {clients.length} Client{ clients.length != 1 ? 's' : ''}
                 </h2>

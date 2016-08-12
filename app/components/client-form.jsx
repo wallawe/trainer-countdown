@@ -43,7 +43,8 @@ export default class ClientForm extends Component {
         addClient({
             name: clientName,
             pin: clientPin,
-            sessionsRemaining: sessionCount
+            sessionsRemaining: sessionCount,
+            //user:
         }).then(res => {
             hashHistory.push('clients');
         })

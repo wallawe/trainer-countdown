@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import UserForm from '../components/user-form';
-import { signUp } from '../api/user';
+import auth from '../api/auth';
 import { hashHistory } from 'react-router';
 
-export default class SignUp extends React.Component {
+export default class SignUp extends Component {
 
     constructor() {
         super();
@@ -54,8 +54,10 @@ export default class SignUp extends React.Component {
             return;
         }
 
-        signUp(this.state).then(res => {
+        auth.signUp(this.state).then(res => {
+            auth.setLsUser(res);
             hashHistory.push('clients');
+            auth.changeSessionStatus(true);
         });
 
     }

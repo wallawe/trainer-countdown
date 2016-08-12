@@ -29,7 +29,6 @@ export default class Client extends Component {
 
         if (confirm('Are you sure?')) {
             removeClient(this.props.params.id).then((response) => {
-
                 hashHistory.push('clients');
             });
         }

@@ -1,56 +1,57 @@
-import React from 'react';
+import React, {Component } from 'react';
 import { Link } from 'react-router';
-import { logOut, getCurrentUser } from '../api/user';
+import auth from '../api/auth';
 import UserForm from '../components/user-form';
 
-export default class Splash extends React.Component {
+export default class Splash extends Component {
     constructor() {
         super();
 
         this.state = {
-            loggedIn: false,
-            currentUser: {}
+            email: '',
+            password: '',
         }
     }
 
-    componentWillMount() {
-        getCurrentUser().then(res => {
-            if (res && res.user) {
-                this.setState({
-                    loggedIn: true,
-                    currentUser: res.user
-                })
-            }
+
+    _pwChange(e) {
+        this.setState({
+            password: e.target.value
         });
     }
 
-    _logOut(e) {
-        e.preventDefault();
-        logOut().then(res => {
-            this.setState({
-                loggedIn: false,
-                currentUser: {}
-            })
-        })
+    _emailChange(e) {
+        this.setState({
+            email: e.target.value
+        });
     }
 
+    _logIn(e) {
+        e.preventDefault();
+
+        if (!this.state.email && !this.state.password) {
+            alert('Please enter your info');
+            return;
+        }
+
+        auth.logIn(this.state).then(res => {
+            auth.setLsUser(res);
+            this.changeSessionStatus(true);
+        });
+    }
 
     render() {
         return (
             <section>
                 <header>Sign In</header>
-                {this.state.loggedIn
-                    ?
-                    <div>
-                        <a href="" onClick={this._logOut.bind(this)}>Log Out</a><br/>
-                        <Link to="/clients">Clients</Link>
-                    </div>
-                    :
-                    <div>
-                        <Link to="/sign-up">Sign Up</Link>
-                        <UserForm />
-                    </div>
-                }
+                <Link to="/sign-up">Sign Up</Link>
+                <UserForm
+                    register={false}
+                    email={this.state.email}
+                    password={this.state.password}
+                    emailChange={this._emailChange.bind(this)}
+                    passwordChange={this._pwChange.bind(this)}
+                    onSubmit={this._logIn.bind(this)} />
             </section>
         )
     }
