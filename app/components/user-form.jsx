@@ -29,7 +29,7 @@ export default class UserForm extends Component {
                 </div>
             );
 
-            cancelBtn = <Link to="/" className="btn gray bottom-btn">Cancel</Link>;
+            cancelBtn = <Link to="/" className="btn plain">Back</Link>;
         }
 
         return (
@@ -47,7 +47,7 @@ export default class UserForm extends Component {
                 </label>
 
                 <div className="align-bottom">
-                    <button type="submit" className="btn purple bottom-btn b-5">{ this.props.register ? 'Register' : 'Sign In' }</button>
+                    <button type="submit" className="btn purple bottom-btn b-5">{ this.props.register ? 'Go!' : 'Sign In' }</button>
                     { cancelBtn }
                 </div>
             </form>

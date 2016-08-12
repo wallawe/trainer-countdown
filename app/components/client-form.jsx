@@ -66,8 +66,8 @@ export default class ClientForm extends Component {
                 </label>
 
                 <div className="align-bottom">
-                    <input type="submit" className="btn purple bottom-btn b-5" value="Save" />
-                    <Link to="/clients" className="btn gray bottom-btn">Cancel</Link>
+                    <input type="submit" className="btn purple b-5" value="Save" />
+                    <Link to="/clients" className="btn plain">Cancel</Link>
                 </div>
             </form>
         )

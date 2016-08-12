@@ -110,8 +110,14 @@ a {
     background: darken($neon, 5%);
   }
 
-  &.bold {
-    font-weight: 700;
+  &.plain {
+    color: #676767;
+    background: transparent;
+  }
+
+  &.black {
+    background: $dark-gray;
+    color: $white;
   }
 }
 
@@ -127,6 +133,16 @@ a {
 
 .lowercase {
   text-transform: lowercase !important;
+}
+
+.or {
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 20px;
+  font-weight: 300;
 }
 
 .container {
@@ -211,10 +227,14 @@ a {
 .clients {
   display: flex;
   flex-wrap: nowrap;
-  background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/weights.jpeg');
   background-repeat: none;
   background-size: cover;
-  background-position: center;
+  background-position: top right;
+  background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/kr.png');
+  // background: linear-gradient(rgba($dark-gray, 0.9), rgba($dark-gray, 0.6)), url('http://playspades-online.com/images/weights.jpeg');
+  // background-position: center;
+
+
 
   header {
     color: $white;

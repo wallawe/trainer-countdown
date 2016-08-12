@@ -45,7 +45,6 @@ export default class Splash extends Component {
         return (
             <section>
                 <header>Sign In</header>
-                <Link to="/sign-up">Sign Up</Link>
                 <UserForm
                     register={false}
                     email={this.state.email}
@@ -53,6 +52,11 @@ export default class Splash extends Component {
                     emailChange={this._emailChange.bind(this)}
                     passwordChange={this._pwChange.bind(this)}
                     onSubmit={this._logIn.bind(this)} />
+
+                <div>
+                    <span className="or">or</span>
+                    <Link to="/sign-up" className="btn black">Sign Up</Link>
+                </div>
             </section>
         )
     }
