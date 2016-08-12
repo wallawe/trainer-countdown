@@ -1,5 +1,5 @@
-export function getClients() {
-    return Stamplay.Object('client').get({});
+export function getClients(ownerId) {
+    return Stamplay.Object('client').get({user: ownerId});
 }
 
 export function getClient(id) {
@@ -12,4 +12,8 @@ export function removeClient(id) {
 
 export function addClient(client) {
     return Stamplay.Object('client').save(client);
+}
+
+export function updateClient(clientId, data) {
+    return Stamplay.Object('client').patch(clientId, data)
 }

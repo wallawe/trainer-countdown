@@ -146,9 +146,10 @@ a {
       display: flex;
       align-items: center;
       flex-direction: column;
-      justify-content: center;
-      background: rgba($red, 0.95);
+      padding-top: 100px;
+      background: rgba($red, 0.97);
       position: fixed;
+      z-index: 1;
       top: 0;
       right: 0;
       left: 0;
@@ -160,6 +161,10 @@ a {
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 2px;
+        border-bottom: 1px solid rgba($white, 0.25);
+        &:last-of-type {
+          border-bottom: 0;
+        }
       }
 
       .fa-times {
@@ -213,6 +218,7 @@ a {
 
   header {
     color: $white;
+    text-transform: capitalize;
   }
 
   h2 {
@@ -294,13 +300,16 @@ a {
   header h2 {
     font-size: 18px;
     margin-top: 15px;
-    color: #666;
+    color: $purple;
     font-weight: 300;
   }
 
   .fa-bolt {
-    color: darken($light-gray, 10%);
+    color: darken($light-gray, 5%);
     margin: 20px auto;
+    &.green {
+      color: $neon;
+    }
   }
 }
 
@@ -371,6 +380,10 @@ input.input-text {
     width: 100%;
     padding: 10px 0 10px 40px;
     margin-top: 5px;
+
+    &.greenlight {
+      border: 1px solid $neon;
+    }
   }
 }
 

@@ -44,7 +44,7 @@ export default class ClientForm extends Component {
             name: clientName,
             pin: clientPin,
             sessionsRemaining: sessionCount,
-            //user:
+            user: this.props.ownerId
         }).then(res => {
             hashHistory.push('clients');
         })

@@ -47,19 +47,38 @@ export default class SignUp extends Component {
     _submitForm(e) {
         e.preventDefault();
 
-        let { displayName, email, password } = this.state;
+        let { displayName, email, password, pinNumber} = this.state;
 
-        if (!displayName || !email || !password ) {
+        if (!displayName || !email || !password || !pinNumber ) {
             alert('Please enter all fields');
             return;
         }
 
-        auth.signUp(this.state).then(res => {
+        let firstName = this._getFirstName(displayName);
+        console.log(firstName);
+
+        let data = {
+            displayName,
+            email,
+            password,
+            pinNumber,
+            firstName
+        }
+
+        auth.signUp(data).then(res => {
             auth.setLsUser(res);
             hashHistory.push('clients');
             auth.changeSessionStatus(true);
         });
 
+    }
+
+    _getFirstName(str) {
+        if (str.indexOf(' ') === -1) {
+            return str;
+        } else {
+            return str.substr(0, str.indexOf(' '));
+        }
     }
 
     render() {

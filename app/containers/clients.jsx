@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { getClients } from '../api/clients';
+import auth from '../api/auth';
 
 export default class Clients extends Component {
     constructor() {
         super();
 
         this.state = {
-            clients: []
+            clients: [],
+            currentUser: {}
         }
     }
 
     componentWillMount() {
-        this._getClients();
+        auth.getLsUser().then(user => {
+            this._getClientsForCurrentUser(user.id);
+            this.setState({ currentUser: user });
+        })
     }
 
     render() {
@@ -20,7 +25,7 @@ export default class Clients extends Component {
 
         return (
             <section className="clients">
-                <header>Welcome, </header>
+                <header>Welcome, {this.state.currentUser.firstName}</header>
                 <h2>
                     {clients.length} Client{ clients.length != 1 ? 's' : ''}
                 </h2>
@@ -34,8 +39,8 @@ export default class Clients extends Component {
         )
     }
 
-    _getClients() {
-        getClients().then((response) => {
+    _getClientsForCurrentUser(ownerId) {
+        getClients(ownerId).then((response) => {
             this.setState({ clients: response.data });
         });
     }

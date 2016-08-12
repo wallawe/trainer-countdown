@@ -12,7 +12,7 @@ export default class PinNumber extends Component {
                     min="4"
                     onChange={this.props.changePin}
                     value={this.props.pin}
-                    className="pin-input" />
+                    className={this.props.greenlight ? 'pin-input greenlight' : 'pin-input'} />
             </div>
         )
     }

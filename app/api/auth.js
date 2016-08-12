@@ -28,10 +28,12 @@ let auth = {
     userLoggedIn() {
         return localStorage.getItem(tokenName);
     },
-    // getLsUser() {
-    //     let user = localStorage.getItem('currentUser');
-    //     return JSON.parse(user);
-    // },
+    getLsUser() {
+        return new Promise(resolve => {
+            let user = localStorage.getItem('currentUser');
+            resolve(JSON.parse(user));
+        })
+    },
     setLsUser(data) {
         let currentUser = JSON.stringify(data);
         localStorage.setItem('currentUser', currentUser);

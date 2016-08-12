@@ -72,7 +72,7 @@ class Navigation extends Component {
     render() {
         return (
             <nav className="navigation">
-                <i className="fa fa-bars" onClick={this._toggleMenu}></i>
+                { this.props.loggedIn ? <i className="fa fa-bars" onClick={this._toggleMenu}></i> : '' }
                 { (this.props.loggedIn && this.state.showMenu)
                     ?
                     <div className="nav-menu">
