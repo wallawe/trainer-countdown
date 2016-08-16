@@ -50,7 +50,7 @@ class Client extends Component {
     render() {
         return (
             <li>
-                <Link to={`/clients/${this.props.id}/new-session`} className="client-info">
+                <Link to={`/clients/${this.props.id}`} className="client-info">
                     <span className="person">{ this.props.name }</span>
                     <span className="sessions">{ this.props.sessions } sessions remaining</span>
                 </Link>

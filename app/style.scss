@@ -125,6 +125,36 @@ a {
   margin-top: auto;
 }
 
+.success-msg {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  transition: all 1000ms ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.3);
+  transition: all 1s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  .fa-check {
+    font-size: 100px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    color: darken($neon, 10%);
+    transform: translate(-50%, -50%);
+  }
+}
+
 .t-20 { margin-top: 20px; }
 .b-20 { margin-bottom: 20px; }
 .t-5  { margin-top: 5px; }
@@ -196,8 +226,8 @@ a {
 
     .fa-bars {
       position: absolute;
-      top: 10px;
-      font-size: 20px;
+      top: 14px;
+      font-size: 26px;
       cursor: pointer;
       right: 10px;
       color: #bbb;

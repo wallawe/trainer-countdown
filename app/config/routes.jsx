@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Router, IndexRoute, Route, Link, hashHistory } from 'react-router';
 import Clients from '../containers/clients';
 import Main from '../containers/main';
@@ -8,6 +7,7 @@ import Splash from '../containers/splash';
 import NewClient from '../containers/new-client';
 import Client from '../containers/client';
 import NewSession from '../containers/new-session';
+import EditClient from '../containers/edit-client';
 import auth from '../api/auth';
 
 function validateAuth(nextState, replace) {
@@ -35,6 +35,7 @@ let routes = (
             <Route path="clients" component={Clients} onEnter={validateAuth} />
             <Route path="clients/new" component={NewClient} onEnter={validateAuth} />
             <Route path="clients/:id" component={Client} onEnter={validateAuth} />
+            <Route path="clients/:id/edit" component={EditClient} onEnter={validateAuth} />
             <Route path="clients/:id/new-session" component={NewSession} onEnter={validateAuth} />
 		</Route>
 	</Router>
