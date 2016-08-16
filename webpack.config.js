@@ -34,7 +34,7 @@ module.exports = {
         },
         {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
+            loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?sourceMap')
         },
         {
             test: /\.css$/,
@@ -51,8 +51,8 @@ module.exports = {
     postcss: function() {
         return [precss, autoprefixer]
     },
-    plugins: [ 
-        HTMLWebpackPluginConfig, 
+    plugins: [
+        HTMLWebpackPluginConfig,
         ExtractTextPluginConfig
     ],
     resolve: {
