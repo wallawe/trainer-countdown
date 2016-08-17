@@ -82,7 +82,9 @@ export default class NewSession extends React.Component {
                     <PinNumber changePin={this._trainerPinChange.bind(this)} greenlight={this.state.trainerPinCorrect} />
                 </label>
 
-                <i className={(this.state.clientPinCorrect && this.state.trainerPinCorrect) ? 'fa fa-bolt fa-5x green' : 'fa fa-bolt fa-5x'}></i>
+                <div className="center-items">
+                    <i className={(this.state.clientPinCorrect && this.state.trainerPinCorrect) ? 'fa fa-bolt fa-5x green' : 'fa fa-bolt fa-5x'}></i>
+                </div>
 
                 <label className="label-text">
                     Client PIN

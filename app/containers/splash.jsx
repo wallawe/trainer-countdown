@@ -10,6 +10,7 @@ export default class Splash extends Component {
         this.state = {
             email: '',
             password: '',
+            error: '',
         }
     }
 
@@ -29,15 +30,19 @@ export default class Splash extends Component {
     _logIn(e) {
         e.preventDefault();
 
-        if (!this.state.email && !this.state.password) {
-            alert('Please enter your info');
+        let { email, password } = this.state;
+
+        if (!email && !password) {
+            this.setState({ error: 'Please enter your credentials.'});
             return;
         }
 
-        auth.logIn(this.state).then(res => {
+        auth.logIn({ email, password }).then(res => {
             auth.setLsUser(res);
             hashHistory.push('clients');
             auth.changeSessionStatus(true);
+        }, (err) => {
+            this.setState({ error: 'There was an error logging in. Please try again.' });
         });
     }
 
@@ -52,8 +57,8 @@ export default class Splash extends Component {
                     emailChange={this._emailChange.bind(this)}
                     passwordChange={this._pwChange.bind(this)}
                     onSubmit={this._logIn.bind(this)} />
-
-                <div>
+                {this.state.error.length ? <div className="error-msg">{this.state.error}</div> : ''}
+                <div className="t-20">
                     <span className="or">or</span>
                     <Link to="/sign-up" className="btn black">Sign Up</Link>
                 </div>
