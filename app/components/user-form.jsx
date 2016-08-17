@@ -29,7 +29,7 @@ export default class UserForm extends Component {
                 </div>
             );
 
-            cancelBtn = <Link to="/" className="btn plain">Back</Link>;
+            cancelBtn = <Link to="/" className="btn plain"><i className="fa fa-chevron-left"></i> Back</Link>;
         }
 
         return (

@@ -101,7 +101,9 @@ export default class NewSession extends React.Component {
 
                         { this.state.loading ? <i className="fa fa-spinner fa-spin"></i> : '' }
                     </button>
-                    <Link to="/clients" className="btn plain">Cancel</Link>
+                    <Link to="/clients" className="btn plain">
+                        <i className="fa fa-chevron-left"></i> Back
+                    </Link>
                 </div>
             </section>
         )

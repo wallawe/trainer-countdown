@@ -64,7 +64,9 @@ export default class EditClient extends Component {
 
                     <div className="align-bottom">
                         <input type="submit" className="btn purple b-5" value="Save Changes" />
-                        <Link to={`clients/${this.state._id}`} className="btn plain">Back</Link>
+                        <Link to={`clients/${this.state._id}`} className="btn plain">
+                            <i className="fa fa-chevron-left"></i> Back
+                        </Link>
                     </div>
                 </form>
             </section>

@@ -43,7 +43,7 @@ export default class Splash extends Component {
 
     render() {
         return (
-            <section>
+            <section className="splash">
                 <header>Sign In</header>
                 <UserForm
                     register={false}

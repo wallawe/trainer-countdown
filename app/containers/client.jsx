@@ -48,6 +48,7 @@ export default class Client extends Component {
                 <div className="align-bottom">
                     <Link to={`clients/${this.props.params.id}/edit`} className="btn gray b-5">Edit / Add Sessions</Link>
                     <button className="btn red" onClick={this._removeClient.bind(this)}>Remove Client</button>
+                    <Link to="clients" className="btn plain white-text"><i className="fa fa-chevron-left"></i> Back</Link>
                 </div>
             </section>
         )
