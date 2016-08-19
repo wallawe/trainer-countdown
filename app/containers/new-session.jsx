@@ -25,7 +25,7 @@ export default class NewSession extends React.Component {
 
         getClient(this.props.params.id).then(client => {
             this.setState({client: client.data[0] });
-        })
+        });
 
     }
 
@@ -64,7 +64,7 @@ export default class NewSession extends React.Component {
             });
 
         } else {
-            alert('Both PINs must be entered correctly.')
+            alert('Both PINs must be entered correctly.');
         }
     }
 

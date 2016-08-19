@@ -21,7 +21,7 @@ export default class Client extends Component {
             let {name, sessionsRemaining} = response.data[0];
 
             this.setState({ name, sessionsRemaining });
-        })
+        });
     }
 
     _removeClient(e) {

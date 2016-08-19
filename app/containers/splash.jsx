@@ -14,7 +14,6 @@ export default class Splash extends Component {
         }
     }
 
-
     _pwChange(e) {
         this.setState({
             password: e.target.value

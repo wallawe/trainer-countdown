@@ -19,7 +19,7 @@ export default class Main extends Component {
     updateAuth(loggedIn) {
         this.setState({
             loggedIn: loggedIn
-        })
+        });
     }
 
     componentWillMount() {
@@ -65,7 +65,7 @@ class Navigation extends Component {
         auth.logOut().then(res => {
             auth.changeSessionStatus(false);
             this.setState({ showMenu: false });
-            hashHistory.push('/')
+            hashHistory.push('/');
         });
     }
 

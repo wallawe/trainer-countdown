@@ -17,7 +17,7 @@ export default class Clients extends Component {
         auth.getLsUser().then(user => {
             this._getClientsForCurrentUser(user.id);
             this.setState({ currentUser: user });
-        })
+        });
     }
 
     render() {
